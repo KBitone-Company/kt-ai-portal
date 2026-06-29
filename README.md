@@ -2,6 +2,70 @@
 
 KT/국방 AI 데이터 플랫폼 PoC 프로젝트입니다. Backstage 기반 포털에 Keycloak 인증, OpenSearch 통합검색, OpenMetadata 카탈로그, 그리고 AI 데이터 플랫폼 업무 기능(Project Workspace, Export Approval, Credit Manager, K-RMF Evidence)을 통합한 구조입니다.
 
+## 주요 화면
+
+아래는 PoC에서 구현·연동한 주요 화면입니다. (이미지는 모두 본 저장소의 `docs/assets/final/`에 포함되어 있습니다.)
+
+### 1. Portal Dashboard
+
+K-Defense AI Data Portal 메인 대시보드입니다. 로그인한 사용자 정보, 통합검색 바로가기, 주요 현황 요약(공지사항, 신규 자산, 내 프로젝트, 반출 승인 대기, 크레딧, K-RMF 증빙 진행률, 시스템 상태)과 업무 메뉴 바로가기를 한눈에 제공합니다.
+
+![Portal Dashboard](docs/assets/final/01-portal-dashboard.png)
+
+### 2. Integrated Search
+
+OpenSearch `portal-catalog` 인덱스를 기반으로 데이터셋, AI 모델, Docker 이미지, PyPI 패키지, 문서 등을 한 번에 검색합니다. URL `?q=` 파라미터를 통해 외부에서도 검색어를 전달할 수 있습니다.
+
+![Integrated Search](docs/assets/final/02-integrated-search.png)
+
+### 3. Project Workspace
+
+프로젝트/워크스페이스를 신청·조회·관리하는 화면입니다. 신규 프로젝트 신청과 기존 프로젝트 목록/상세 정보를 PoC 수준에서 제공합니다.
+
+![Project Workspace](docs/assets/final/03-project-workspace.png)
+
+### 4. Export Approval
+
+데이터 반출/반입 승인 프로세스를 관리하는 화면입니다. 신청 목록, 승인 상태, 상세 보기 등의 mock 기반 워크플로우를 보여줍니다.
+
+![Export Approval](docs/assets/final/04-export-approval.png)
+
+### 5. Credit Manager
+
+프로젝트별 AI 자원 크레딧 현황을 관리하는 화면입니다. 잔여 크레딧, 사용 내역, 충전/할당 현황을 요약합니다.
+
+![Credit Manager](docs/assets/final/05-credit-manager.png)
+
+### 6. K-RMF Evidence
+
+K-RMF(국방 정볼체계 보안통제) 증빙 관리 화면입니다. 통제 항목별 증빙 진행률과 산출물 목록을 확인할 수 있습니다.
+
+![K-RMF Evidence](docs/assets/final/06-krmf-evidence.png)
+
+### 7. OpenMetadata Catalog
+
+OpenMetadata 데이터/AI 카탈로그 UI입니다. 데이터베이스, 테이블, ML 모델 등의 메타데이터와 lineage를 탐색합니다.
+
+![OpenMetadata Catalog](docs/assets/final/07-openmetadata.png)
+
+### 8. OpenSearch Dashboards
+
+OpenSearch Dashboards 화면입니다. `portal-catalog` 인덱스 패턴을 바탕으로 데이터를 검색하고 시각화합니다.
+
+![OpenSearch Dashboards](docs/assets/final/08-opensearch-dashboards.png)
+
+### 9. Backstage OIDC Sign-in
+
+Backstage 로그인 페이지입니다. Keycloak OIDC Provider와 Guest 로그인 옵션을 제공합니다.
+
+![Backstage OIDC Sign-in](docs/assets/final/09-backstage-signin.png)
+
+### 10. Keycloak Login
+
+Keycloak OIDC 로그인 화면입니다. `admin01` 사용자를 통해 Backstage로 SSO 로그인하는 과정을 보여줍니다.
+
+![Keycloak Login](docs/assets/final/09-keycloak-login.png)
+
 ## 기술 스택
 
 | 영역 | 기술 |
