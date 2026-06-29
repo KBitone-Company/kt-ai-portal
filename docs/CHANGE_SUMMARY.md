@@ -1,4 +1,91 @@
 # CHANGE SUMMARY
+
+## 13단계: 국방지능화플랫폼 타이틀 변경 및 관리자 기능 화면 1차 보강
+
+### 작성일시
+
+2026-06-29
+
+### 작업 단계
+
+13단계 국방지능화플랫폼 타이틀 변경 및 관리자 기능 화면 1차 보강
+
+### 작업 목표
+
+- 포털 공식 명칭을 `국방지능화플랫폼 (K-Defense Intelligence Platform)`으로 변경
+- 요구사항 PDF의 관리자 기능을 1차 화면으로 추가
+- 실제 DB/API/Keycloak 관리 로직은 구현하지 않고 mock data 기반 UI 확보
+
+### 생성 파일
+
+- `packages/app/src/components/admin-console/index.ts`
+- `packages/app/src/components/admin-console/types.ts`
+- `packages/app/src/components/admin-console/mockAdminData.ts`
+- `packages/app/src/components/admin-console/AdminConsolePage.tsx`
+- `packages/app/src/components/admin-console/AdminSummaryCards.tsx`
+- `packages/app/src/components/admin-console/UserRegistrationPanel.tsx`
+- `packages/app/src/components/admin-console/UserManagementPanel.tsx`
+- `packages/app/src/components/admin-console/RolePermissionPanel.tsx`
+- `packages/app/src/components/admin-console/LoginPolicyPanel.tsx`
+- `packages/app/src/components/admin-console/PasswordPolicyPanel.tsx`
+- `packages/app/src/components/admin-console/AuditLogPanel.tsx`
+- `packages/app/src/components/admin-console/MenuManagementPanel.tsx`
+- `packages/app/src/components/admin-console/AdminRequirementCoveragePanel.tsx`
+- `docs/REQUIREMENT_SCREEN_COVERAGE.md`
+
+### 변경 파일
+
+- `backstage-portal/app-config.yaml`
+- `packages/app/src/App.tsx`
+- `packages/app/src/components/portal-dashboard/DashboardHero.tsx`
+- `packages/app/src/components/portal-dashboard/mockDashboardData.ts`
+- `packages/app/src/components/portal-dashboard/QuickLinkCards.tsx`
+- `README.md`
+- `backstage-portal/README.md`
+- `docs/FINAL_DELIVERABLES.md`
+- `docs/DEMO_SCRIPT.md`
+- `docs/PORTAL_DASHBOARD.md`
+- `docs/ARCHITECTURE.md`
+- `docs/CHANGE_SUMMARY.md`
+- `docs/WBS.md`
+- `docs/TODO.md`
+- `docs/TECH_DEBT.md`
+- `notes/DECISIONS.md`
+
+### 구현 내용
+
+- `app-config.yaml`의 `app.title`, `organization.name`, `mcpActions.name/description`을 `국방지능화플랫폼`으로 변경
+- Portal Dashboard Hero의 제목/부제를 `국방지능화플랫폼 / K-Defense Intelligence Platform`으로 변경
+- `Admin Console` 메뉴를 사이드바에 추가하고 `/admin-console` 라우팅 등록
+- Admin Console 화면 구성
+  - 요약 카드 8개
+  - 사용자 등록 신청/사용자 관리/권한 역할/로그인 정책/비밀번호 정책/감사 로그/메뉴 관리/요구사항 현황 패널
+- Portal Dashboard Quick Links에 `Admin Console` 바로가기 추가
+- `docs/REQUIREMENT_SCREEN_COVERAGE.md` 작성 및 주요 문서 갱신
+
+### 검증 결과
+
+- Backstage `http://localhost:3000` 접속 가능
+- Keycloak OIDC 로그인 가능
+- Home 화면에 `국방지능화플랫폼` 표시
+- 기존 메뉴(Integrated Search, Project Workspace, Export Approval, Credit Manager, K-RMF Evidence) 정상 접근
+- 신규 메뉴 `Admin Console` 표시 및 `/admin-console` 접근 가능
+- Admin Console 화면에 요약 카드 및 8개 패널 표시
+
+### 발생 오류 및 조치
+
+- 기존 `App.test.tsx` TypeScript 오류는 유지됨 (개발 서버 동작에 영향 없음)
+- MUI v4 `findDOMNode is deprecated` warning 유지됨 (기능에 영향 없음)
+
+### 미완료/보류 사항
+
+- Admin Console의 사용자/권한/정책/메뉴 관리는 mock data 기반 화면이며 실제 DB/API/Keycloak 연동은 14~16단계에서 진행
+- 서비스 카탈로그/제안 게시판은 17단계에서 추가 예정
+
+### 다음 단계 작업
+
+- 14단계: 사용자 등록/승인 및 외부 사용자 관리 화면 상세화
+
 ## 12단계: 최종 산출물 및 제안장표용 화면 정리
 
 ### 작성일시

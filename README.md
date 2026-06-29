@@ -1,6 +1,8 @@
-# K-Defense AI Data Portal (KT AI/Data Platform Portal PoC)
+# 국방지능화플랫폼
 
-KT/국방 AI 데이터 플랫폼 PoC 프로젝트입니다. Backstage 기반 포털에 Keycloak 인증, OpenSearch 통합검색, OpenMetadata 카탈로그, 그리고 AI 데이터 플랫폼 업무 기능(Project Workspace, Export Approval, Credit Manager, K-RMF Evidence)을 통합한 구조입니다.
+**K-Defense Intelligence Platform**
+
+국방 AI 데이터 플랫폼 PoC 프로젝트입니다. Backstage 기반 포털에 Keycloak 인증, OpenSearch 통합검색, OpenMetadata 카탈로그, 그리고 AI 데이터 플랫폼 업무 기능(Project Workspace, Export Approval, Credit Manager, K-RMF Evidence, Admin Console)을 통합한 구조입니다.
 
 ## 주요 화면
 
@@ -8,7 +10,7 @@ KT/국방 AI 데이터 플랫폼 PoC 프로젝트입니다. Backstage 기반 포
 
 ### 1. Portal Dashboard
 
-K-Defense AI Data Portal 메인 대시보드입니다. 로그인한 사용자 정보, 통합검색 바로가기, 주요 현황 요약(공지사항, 신규 자산, 내 프로젝트, 반출 승인 대기, 크레딧, K-RMF 증빙 진행률, 시스템 상태)과 업무 메뉴 바로가기를 한눈에 제공합니다.
+국방지능화플랫폼 (K-Defense Intelligence Platform) 메인 대시보드입니다. 로그인한 사용자 정보, 통합검색 바로가기, 주요 현황 요약(공지사항, 신규 자산, 내 프로젝트, 반출 승인 대기, 크레딧, K-RMF 증빙 진행률, 시스템 상태)과 업무 메뉴 바로가기를 한눈에 제공합니다.
 
 ![Portal Dashboard](docs/assets/final/01-portal-dashboard.png)
 
@@ -85,6 +87,7 @@ Keycloak OIDC 로그인 화면입니다. `admin01` 사용자를 통해 Backstage
 - **Export Approval**: 데이터 반출/반입 승인 관리 PoC
 - **Credit Manager**: 프로젝트별 크레딧 관리 PoC
 - **K-RMF Evidence**: K-RMF 보안통제 증빙관리 PoC
+- **Admin Console**: 사용자/권한/정책/감사로그/메뉴 관리자 허브 PoC
 
 ## 폴더 구조
 
@@ -164,6 +167,7 @@ cp .env.example .env
 |--------|-----|------|
 | Backstage | http://localhost:3000 | Keycloak OIDC 로그인 |
 | Backstage backend | http://localhost:7007 | - |
+| Admin Console | http://localhost:3000/admin-console | 관리자 허브 |
 | Keycloak Admin | http://localhost:8080/admin | 관리자 콘솔 |
 | OpenSearch Dashboards | http://localhost:5601 | 검색·시각화 |
 | OpenMetadata | http://localhost:8585 | 데이터/AI 카탈로그 |
@@ -190,7 +194,7 @@ cp .env.example .env
 
 ## PoC 한계사항
 
-- 업무 기능(Project Workspace, Export Approval, Credit Manager, K-RMF Evidence)은 mock data 기반
+- 업무 기능(Project Workspace, Export Approval, Credit Manager, K-RMF Evidence, Admin Console)은 mock data 기반
 - 실제 DB/API 연동 없음
 - 실제 파일 반출/다운로드 통제 없음
 - 권한 기반 검색 결과 필터링 미구현

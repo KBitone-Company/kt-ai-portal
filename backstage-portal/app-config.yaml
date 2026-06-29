@@ -1,5 +1,5 @@
 app:
-  title: Scaffolded Backstage App
+  title: 국방지능화플랫폼
   baseUrl: http://localhost:3000
 
   # Enable all packages by default, this will discover packages from packages/app/package.json
@@ -12,7 +12,7 @@ app:
           path: /
 
 organization:
-  name: My Company
+  name: 국방지능화플랫폼
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -160,5 +160,5 @@ permission:
 
 # see https://backstage.io/docs/ai/mcp-actions for more details
 mcpActions:
-  name: 'My Company Backstage' # defaults to "backstage"
-  description: 'Tools for managing your software catalog, creating new services from templates, and exploring your developer portal' # optional
+  name: '국방지능화플랫폼'
+  description: '국방 AI 데이터, 모델, 프로젝트를 통합 검색·관리하고 반출/반입, 크레딧, K-RMF 증빙을 지원하는 관리자 포털 도구 모음'

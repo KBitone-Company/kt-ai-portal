@@ -370,3 +370,23 @@
 - 실제 secret 값은 문서와 Git에 기록하지 않는다.
 - `.env`는 `.gitignore`에 포함하여 Git에 포함되지 않도록 관리한다.
 - PoC 환경에서 노출된 Keycloak Client Secret은 필요 시 재생성한다.
+
+## 13단계 결정사항
+
+### 포털 명칭 변경
+
+- 공식 명칭을 `국방지능화플랫폼`으로 확정하고, 영문 보조명 `K-Defense Intelligence Platform`을 함께 사용한다.
+- 기존 `K-Defense AI Data Portal`은 더 이상 메인 타이틀로 사용하지 않으며, 문서에서는 이전 명칭으로만 언급한다.
+- `app-config.yaml`, Portal Dashboard Hero, README 및 주요 문서 제목에 새 명칭을 반영한다.
+
+### Admin Console 구현 방식
+
+- 6~11단계와 동일하게 **PoC 컴포넌트 방식**(`packages/app/src/components/admin-console/`)으로 구현한다.
+- 내부 DB/API/Keycloak 관리 로직은 13단계에서 구현하지 않으며, mock data 기반 화면을 우선 확보한다.
+- Admin Console은 사용자 등록 신청, 사용자 관리, 권한/역할, 로그인 정책, 비밀번호 정책, 감사 로그, 메뉴 관리, 요구사항 대응 현황 패널로 구성한다.
+- 사이드바 메뉴와 Portal Dashboard Quick Links에 `Admin Console`을 추가하여 관리자 접근 경로를 노출한다.
+
+### 요구사항 대응 현황 문서화
+
+- `docs/REQUIREMENT_SCREEN_COVERAGE.md`를 신규 작성하여 요구사항 PDF 대비 현재 화면 충족도와 후속 단계를 정리한다.
+- Admin Console 추가 후 화면 기준 충족도를 약 80% 내외로 판단하고, 내부 로직 연동은 14~18단계로 분리한다.

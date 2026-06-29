@@ -1,8 +1,8 @@
-# ARCHITECTURE - KT AI/Data Platform Portal
+# ARCHITECTURE - 국방지능화플랫폼
 
 ## 개요
 
-본 문서는 KT AI/Data Platform Portal PoC의 전체 아키텍처를 정의합니다.
+본 문서는 국방지능화플랫폼 PoC의 전체 아키텍처를 정의합니다.
 
 ## PoC 범위
 
@@ -97,6 +97,7 @@
 | krmf-evidence | K-RMF 증빙관리 | PoC 완료 (mock data) |
 | integrated-search | 통합검색/카탈로그 검색 | PoC 완료 (OpenSearch `portal-catalog` 연동) |
 | portal-dashboard | 메인 포털 대시보드 | PoC 완료 (mock data) |
+| admin-console | 관리자 기능 허브 | PoC 1차 화면 (mock data) |
 
 ## Portal Dashboard 레이어
 
@@ -264,6 +265,17 @@ OpenSearch / OpenMetadata / Keycloak
   - Portal Dashboard, Integrated Search, Project Workspace, Export Approval, Credit Manager, K-RMF Evidence, OpenMetadata, OpenSearch Dashboards, Backstage Sign-In, Keycloak Login
 - PoC 한계사항, 운영 전환 고려사항, 후속 개발 과제, 보안 주의사항 정리
 
+## 13단계 완료 상태
+
+- 포털 명칭 `국방지능화플랫폼 (K-Defense Intelligence Platform)`으로 변경
+- `admin-console` PoC 컴포넌트 추가
+  - 사용자 등록 신청, 사용자 관리, 권한/역할, 로그인 정책, 비밀번호 정책, 감사 로그, 메뉴 관리, 요구사항 대응 현황 패널
+- `/admin-console` 경로에서 Admin Console 확인
+- `App.tsx` 사이드바에 `Admin Console` 메뉴 추가
+- Portal Dashboard에 `Admin Console` 바로가기 추가
+- `docs/REQUIREMENT_SCREEN_COVERAGE.md` 작성
+- README 및 문서 갱신
+
 ## 최종 PoC 구성 요약
 
 ```text
@@ -275,7 +287,8 @@ OpenSearch / OpenMetadata / Keycloak
   ├─ Project Workspace (/project-workspace)
   ├─ Export Approval (/export-approval)
   ├─ Credit Manager (/credit-manager)
-  └─ K-RMF Evidence (/krmf-evidence)
+  ├─ K-RMF Evidence (/krmf-evidence)
+  └─ Admin Console (/admin-console)
   ↓ OIDC
 [Keycloak :8080 / Realm kt-ai / Client backstage]
   ↓ Search API

@@ -231,6 +231,13 @@ export const mockDashboardData: DashboardData = {
 
   quickLinks: [
     {
+      id: 'ql-admin',
+      title: 'Admin Console',
+      description: '사용자/권한/정책/감사로그 관리',
+      type: 'internal',
+      target: '/admin-console',
+    },
+    {
       id: 'ql-search',
       title: 'Integrated Search',
       description: '통합 검색',

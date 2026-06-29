@@ -5,12 +5,14 @@ import SwapHorizIcon from '@material-ui/icons/SwapHoriz';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import SearchIcon from '@material-ui/icons/Search';
+import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import { ProjectWorkspacePage } from './components/project-workspace';
 import { ExportApprovalPage } from './components/export-approval';
 import { CreditManagerPage } from './components/credit-manager';
 import { KrmfEvidencePage } from './components/krmf-evidence';
 import { IntegratedSearchPage } from './components/integrated-search';
 import { PortalDashboardPage } from './components/portal-dashboard';
+import { AdminConsolePage } from './components/admin-console';
 import { createApp } from '@backstage/app-defaults';
 import { AppRouter, OAuth2 } from '@backstage/core-app-api';
 import {
@@ -97,6 +99,7 @@ const AppLayout = () => (
         <SidebarItem icon={AccountBalanceIcon} to="/credit-manager" text="Credit Manager" />
         <SidebarItem icon={VerifiedUserIcon} to="/krmf-evidence" text="K-RMF Evidence" />
         <SidebarItem icon={SearchIcon} to="/integrated-search" text="Integrated Search" />
+        <SidebarItem icon={SupervisorAccountIcon} to="/admin-console" text="Admin Console" />
       </SidebarGroup>
       <SidebarSpace />
       <SidebarDivider />
@@ -120,6 +123,7 @@ const App = () => (
           <Route path="/credit-manager" element={<CreditManagerPage />} />
           <Route path="/krmf-evidence" element={<KrmfEvidencePage />} />
           <Route path="/integrated-search" element={<IntegratedSearchPage />} />
+          <Route path="/admin-console" element={<AdminConsolePage />} />
         </Route>
       </Routes>
     </AppRouter>

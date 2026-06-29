@@ -29,6 +29,7 @@ packages/app/src/App.test.tsx:22:33 - error TS2339:
 |------|------|------|-----------|
 | PoC 컴포넌트 | 모든 업무 기능이 `packages/app/src/components/`에 직접 구현됨 | 정식 Backstage Plugin 구조가 아니라 확장성과 유지보수성이 낮음 | 필요 시 `backstage-portal/plugins/` 아래 정식 플러그인으로 분리 |
 | Mock Data | 업무 화면이 mock data 기반 | 실제 데이터 반영 불가 | 각 플러그인별 API 클라이언트 및 Backend API 구현 |
+| Admin Console | 사용자/권한/정책/감사로그/메뉴 관리가 mock data 기반 | 실제 Keycloak/DB 연동 전까지 관리 기능 미동작 | 14~16단계에서 화면 상세화 및 Keycloak/감사 로그 연동 |
 | Catalog 연동 | OIDC 로그인 시 Backstage Catalog에 사용자/그룹 엔티티가 없음 | `dangerouslyAllowSignInWithoutUserInCatalog: true`로 임시 우회 중 | Keycloak 그룹/역할을 Backstage Catalog에 동기화하거나 resolver 변경 |
 
 ## 4. 인증/권한 부채

@@ -13,6 +13,7 @@ import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import StorageIcon from '@material-ui/icons/Storage';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import { QuickLink } from './types';
 
 interface QuickLinkCardsProps {
@@ -28,6 +29,7 @@ const iconMap: Record<string, React.ReactNode> = {
   'ql-openmetadata': <StorageIcon />,
   'ql-opensearch': <DashboardIcon />,
   'ql-keycloak': <VpnKeyIcon />,
+  'ql-admin': <SupervisorAccountIcon />,
 };
 
 export const QuickLinkCards = ({ links }: QuickLinkCardsProps) => {

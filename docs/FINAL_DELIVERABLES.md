@@ -1,12 +1,12 @@
-# KT AI/Data Platform Portal PoC 최종 산출물
+# 국방지능화플랫폼 PoC 최종 산출물
 
 ## 1. 프로젝트 개요
 
 | 항목 | 내용 |
 |------|------|
-| 프로젝트명 | K-Defense AI Data Portal |
-| 한글명 | 국방 AI 데이터 통합포털 |
-| 목적 | KT/국방 AI 데이터 플랫폼 PoC |
+| 프로젝트명 | 국방지능화플랫폼 (K-Defense Intelligence Platform) |
+| 한글명 | 국방지능화플랫폼 |
+| 목적 | 국방지능화플랫폼 PoC |
 | 기반 기술 | Backstage, Keycloak, OpenSearch, OpenMetadata, React/TypeScript, Docker Compose |
 | 프론트엔드 | http://localhost:3000 |
 | 백엔드 API | http://localhost:7007 |
@@ -27,6 +27,7 @@
 | 반출관리 | Export Approval | 완료 | mock data 기반 PoC 화면 |
 | 크레딧 | Credit Manager | 완료 | mock data 기반 PoC 화면 |
 | 보안증빙 | K-RMF Evidence | 완료 | mock data 기반 PoC 화면 |
+| 관리자 | Admin Console | 1차 화면 | 사용자/권한/정책/감사로그/메뉴 mock UI |
 
 ## 3. 주요 화면 목록
 
@@ -42,6 +43,7 @@
 | OpenSearch Dashboards | `http://localhost:5601` | 검색·시각화 | `docs/assets/final/08-opensearch-dashboards.png` |
 | Backstage Sign-In | `/` (로그아웃 상태) | Guest/Keycloak 로그인 선택 | `docs/assets/final/09-backstage-signin.png` |
 | Keycloak Login | `http://localhost:8080/realms/kt-ai/...` | OIDC 인증 로그인 | `docs/assets/final/09-keycloak-login.png` |
+| Admin Console | `/admin-console` | 사용자/권한/정책/감사로그/메뉴 관리 | 미캡처 |
 
 ## 4. 데모 시나리오
 

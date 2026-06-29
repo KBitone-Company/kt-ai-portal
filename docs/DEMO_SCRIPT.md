@@ -1,8 +1,8 @@
-# K-Defense AI Data Portal 데모 스크립트
+# 국방지능화플랫폼 (K-Defense Intelligence Platform) 데모 스크립트
 
 ## 데모 목적
 
-KT/국방 AI 데이터 플랫폼의 메인 포털, 인증, 통합검색, 프로젝트 관리, 반출/반입 관리, 크레딧 관리, K-RMF 증빙관리 기능을 PoC 수준에서 시연한다.
+국방지능화플랫폼의 메인 포털, 인증, 통합검색, 프로젝트 관리, 반출/반입 관리, 크레딧 관리, K-RMF 증빙관리 기능을 PoC 수준에서 시연한다.
 
 ## 데모 준비
 
@@ -52,7 +52,7 @@ cd kt-ai-portal/backstage-portal
 4. Portal Dashboard로 복귀 확인
 
 **발표 멘트 예시:**
-> "K-Defense AI Data Portal은 Backstage 기반의 국방 AI 데이터 통합포털입니다. Keycloak OIDC를 통해 로그인하면 사용자 정보와 주요 현황을 한눈에 확인할 수 있습니다."
+> "국방지능화플랫폼 (K-Defense Intelligence Platform)은 Backstage 기반의 국방지능화플랫폼입니다. Keycloak OIDC를 통해 로그인하면 사용자 정보와 주요 현황을 한눈에 확인할 수 있습니다."
 
 ### 2. Portal Dashboard 확인
 
@@ -115,7 +115,18 @@ cd kt-ai-portal/backstage-portal
 **발표 멘트 예시:**
 > "K-RMF 증빙관리는 국방 보안통제 항목별 증빙자료와 미흡사항 조치를 관리합니다. 실제 평가 시스템과 연동하여 자동화할 수 있습니다."
 
-### 8. OpenMetadata 확인
+### 8. Admin Console
+
+1. 사이드바 또는 바로가기에서 `Admin Console` 이동
+2. 요약 카드(등록 신청 대기, 승인 대기, 외부/활성 사용자, 잠금 계정 등) 확인
+3. `사용자 등록 신청`, `사용자 관리`, `권한/역할` 탭 확인
+4. `로그인 정책`, `비밀번호 정책`, `감사 로그`, `메뉴 관리` 탭 확인
+5. 하단 `요구사항 대응 현황` 표 확인
+
+**발표 멘트 예시:**
+> "Admin Console은 관리자가 사용자 등록 승인, 권한/역할, 로그인 및 비밀번호 정책, 감사 로그, 메뉴를 관리하는 허브입니다. 현재는 mock data 기반 1차 화면이며, 14~16단계에서 내부 로직을 점진적으로 연동할 예정입니다."
+
+### 9. OpenMetadata 확인
 
 1. 브라우저에서 `http://localhost:8585` 접속
 2. OpenMetadata 로그인(기본 계정: `admin@openmetadata.org / <password>`)
@@ -124,7 +135,7 @@ cd kt-ai-portal/backstage-portal
 **발표 멘트 예시:**
 > "OpenMetadata는 데이터와 AI 모델의 메타데이터를 관리하는 카탈로그 도구입니다. 향후 포털과 연동하여 최신 자산을 자동으로 동기화할 예정입니다."
 
-### 9. OpenSearch Dashboards 확인
+### 10. OpenSearch Dashboards 확인
 
 1. 브라우저에서 `http://localhost:5601` 접속
 2. OpenSearch Dashboards 홈 화면 확인
@@ -133,7 +144,7 @@ cd kt-ai-portal/backstage-portal
 **발표 멘트 예시:**
 > "OpenSearch Dashboards에서는 `portal-catalog` 인덱스와 검색 통계를 시각화할 수 있습니다."
 
-### 10. 정리 멘트
+### 11. 정리 멘트
 
 **발표 멘트 예시:**
 > "이번 PoC에서는 Backstage 기반 포털, Keycloak 인증, OpenSearch 통합검색, OpenMetadata 카탈로그, 그리고 4가지 업무 기능의 UI를 구현했습니다. 운영 전환 시 실제 DB/API 연동, 권한 제어, 보안 강화를 통해 완성도를 높일 계획입니다."

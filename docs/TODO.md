@@ -184,6 +184,37 @@
 - [x] `docs/DEMO_SCRIPT.md` 작성
 - [x] `docs/TECH_DEBT.md` 작성
 
+## 13단계: 국방지능화플랫폼 타이틀 변경 및 관리자 기능 화면 1차 보강
+
+- [x] 포털 명칭 `국방지능화플랫폼`으로 변경
+  - [x] `app-config.yaml` title / organization / mcpActions 반영
+  - [x] Portal Dashboard Hero 영역 반영
+  - [x] README.md 및 주요 문서 제목/개요 반영
+- [x] Admin Console 메뉴 및 라우팅 추가 (`/admin-console`)
+- [x] Admin Console 화면 구성
+  - [x] 요약 카드 (등록 신청 대기, 승인 대기, 외부 사용자, 활성 사용자, 잠금 계정, 권한 그룹, 로그인 정책, 보안 이벤트)
+  - [x] 사용자 등록 신청 패널
+  - [x] 사용자 관리 패널
+  - [x] 권한/역할 관리 패널
+  - [x] 로그인 정책 관리 패널
+  - [x] 비밀번호 정책 관리 패널
+  - [x] 이력/감사 로그 패널
+  - [x] 메뉴 관리 패널
+  - [x] 요구사항 대응 현황 패널
+- [x] Portal Dashboard Quick Links에 Admin Console 추가
+- [x] `docs/REQUIREMENT_SCREEN_COVERAGE.md` 작성
+- [x] WBS/ARCHITECTURE/CHANGE_SUMMARY/TODO/DECISIONS/README 갱신
+
+## 14단계: 사용자 등록/승인 및 외부 사용자 관리 화면 상세화
+
+- [ ] 사용자 등록 신청 상세 화면
+- [ ] 본인확인 상태 표시
+- [ ] 사용자 승인/반려 mock workflow
+- [ ] 외부 사용자 계정 등록/수정 화면
+- [ ] 사용자 소속/역할/접속 가능 서비스 설정 화면
+- [ ] 사용자 상태 변경 이력 표시
+- [ ] Keycloak 연동 설계 문서 작성
+
 ## PoC 이후 후속 작업
 
 ### 단기 안정화

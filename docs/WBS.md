@@ -1,8 +1,8 @@
-# WBS - KT AI/Data Platform Portal
+# WBS - 국방지능화플랫폼
 
 ## 개요
 
-본 문서는 KT AI/Data Platform Portal PoC 개발을 위한 단계별 작업 분해 구조(WBS)를 정의합니다.
+본 문서는 국방지능화플랫폼 PoC 개발을 위한 단계별 작업 분해 구조(WBS)를 정의합니다.
 
 ## 단계별 일정
 
@@ -21,6 +21,7 @@
 | 11 | 메인 포털 대시보드 및 홈 화면 재구성 | 완료 | `portal-dashboard` PoC 컴포넌트 개발, Home 화면 교체, 문서 정리 |
 | 11.1 | Keycloak OIDC 런타임 환경변수 안정화 | 완료 | `.env` 로딩 스크립트, admin01 OIDC 로그인 검증 |
 | 12 | 최종 산출물 및 제안장표용 화면 정리 | 완료 | 최종 산출물 문서, 데모 시나리오, 기술부채 문서, 화면 캡처 |
+| 13 | 국방지능화플랫폼 타이틀 변경 및 관리자 기능 화면 1차 보강 | 완료 | 포털 명칭 변경, Admin Console mock UI 추가, 요구사항 화면 대응 문서 |
 
 ## 11단계: 메인 포털 대시보드 및 홈 화면 재구성
 
@@ -53,6 +54,15 @@
 - [x] `docs/FINAL_DELIVERABLES.md` 작성
 - [x] `docs/DEMO_SCRIPT.md` 작성
 - [x] `docs/TECH_DEBT.md` 작성
+
+## 13단계: 국방지능화플랫폼 타이틀 변경 및 관리자 기능 화면 1차 보강
+
+- [x] 포털 명칭 `국방지능화플랫폼`으로 변경
+- [x] `Admin Console` 메뉴 및 `/admin-console` 라우팅 추가
+- [x] Admin Console 요약 카드 및 8개 관리 패널 구현 (mock data)
+- [x] Portal Dashboard Quick Links에 Admin Console 추가
+- [x] `docs/REQUIREMENT_SCREEN_COVERAGE.md` 작성
+- [x] WBS/ARCHITECTURE/CHANGE_SUMMARY/TODO/DECISIONS/README 갱신
 
 ## 1단계: Backstage 기본 포털 구축
 

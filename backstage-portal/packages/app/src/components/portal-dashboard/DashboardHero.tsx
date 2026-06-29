@@ -42,10 +42,10 @@ export const DashboardHero = ({ fallbackUser }: DashboardHeroProps) => {
       <Box display="flex" justifyContent="space-between" alignItems="flex-start" flexWrap="wrap">
         <Box>
           <Typography variant="h3" style={{ color: '#fff', fontWeight: 700 }}>
-            K-Defense AI Data Portal
+            국방지능화플랫폼
           </Typography>
           <Typography variant="h5" style={{ color: '#dbeafe', marginTop: 8 }}>
-            국방 AI 데이터 통합포털
+            K-Defense Intelligence Platform
           </Typography>
           <Typography variant="body1" style={{ color: '#eff6ff', marginTop: 16, maxWidth: 640 }}>
             국방 AI 데이터, 모델, 프로젝트를 하나의 포털에서 검색하고 관리하며,

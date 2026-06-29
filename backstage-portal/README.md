@@ -1,6 +1,6 @@
-# KT AI/Data Platform Portal - Backstage
+# 국방지능화플랫폼 - Backstage
 
-KT AI/Data Platform Portal PoC의 Backstage 기반 포털 앱입니다.
+국방지능화플랫폼 PoC의 Backstage 기반 포털 앱입니다.
 
 ## 사전 요구사항
 
@@ -78,6 +78,7 @@ Keycloak Client Secret 확인 방법:
 - Credit Manager
 - K-RMF Evidence
 - Integrated Search
+- Admin Console
 
 ## 프로덕션 빌드
 
