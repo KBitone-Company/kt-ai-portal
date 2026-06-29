@@ -28,6 +28,7 @@
 | 크레딧 | Credit Manager | 완료 | mock data 기반 PoC 화면 |
 | 보안증빙 | K-RMF Evidence | 완료 | mock data 기반 PoC 화면 |
 | 관리자 | Admin Console | 1차 화면 | 사용자/권한/정책/감사로그/메뉴 mock UI |
+| 사용자 관리 | Admin Console > 사용자 등록/승인/외부 사용자 | 상세 화면 | 등록 상세, 승인 workflow, 외부 사용자 관리, 상태 이력 |
 
 ## 3. 주요 화면 목록
 
@@ -44,6 +45,7 @@
 | Backstage Sign-In | `/` (로그아웃 상태) | Guest/Keycloak 로그인 선택 | `docs/assets/final/09-backstage-signin.png` |
 | Keycloak Login | `http://localhost:8080/realms/kt-ai/...` | OIDC 인증 로그인 | `docs/assets/final/09-keycloak-login.png` |
 | Admin Console | `/admin-console` | 사용자/권한/정책/감사로그/메뉴 관리 | 미캡처 |
+| 사용자 관리 설계 | `docs/USER_MANAGEMENT_DESIGN.md` | 사용자/Keycloak/DB 연동 설계 | - |
 
 ## 4. 데모 시나리오
 

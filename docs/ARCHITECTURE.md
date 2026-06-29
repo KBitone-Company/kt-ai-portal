@@ -276,6 +276,19 @@ OpenSearch / OpenMetadata / Keycloak
 - `docs/REQUIREMENT_SCREEN_COVERAGE.md` 작성
 - README 및 문서 갱신
 
+## 14단계 완료 상태
+
+- Admin Console 사용자 관련 화면 상세화
+  - 사용자 등록 신청 상세 화면 (`UserRegistrationDetail`)
+  - 본인확인 상태 Chip (`UserIdentityVerificationChip`)
+  - 승인/반려/보완요청/재신청 mock workflow (`UserApprovalWorkflow`)
+  - 외부 사용자 관리 패널 (`ExternalUserManagementPanel`)
+  - 사용자 소속/역할/접속 가능 서비스 설정 패널 (`UserAccessServicePanel`)
+  - 사용자 상태 변경 이력 패널 (`UserStatusHistoryPanel`)
+- Admin Console 탭에 `외부 사용자 관리` 추가
+- `docs/USER_MANAGEMENT_DESIGN.md` 작성
+- 요구사항 화면 대응 현황 갱신
+
 ## 최종 PoC 구성 요약
 
 ```text

@@ -1,5 +1,91 @@
 # CHANGE SUMMARY
 
+## 14단계: 사용자 등록/승인 및 외부 사용자 관리 화면 상세화
+
+### 작성일시
+
+2026-06-29
+
+### 작업 단계
+
+14단계 사용자 등록/승인 및 외부 사용자 관리 화면 상세화
+
+### 작업 목표
+
+- 사용자 등록 신청 상세 화면 구현
+- 본인확인 상태 표시 및 승인/반려/보완요청/재신청 mock workflow 구현
+- 외부 사용자 계정 관리 화면 추가
+- 사용자 소속/역할/접속 가능 서비스 설정 UI 구현
+- 사용자 상태 변경 이력 표시
+- Keycloak/DB 연동 설계 문서 작성
+
+### 생성 파일
+
+- `packages/app/src/components/admin-console/UserRegistrationDetail.tsx`
+- `packages/app/src/components/admin-console/UserApprovalWorkflow.tsx`
+- `packages/app/src/components/admin-console/ExternalUserManagementPanel.tsx`
+- `packages/app/src/components/admin-console/UserAccessServicePanel.tsx`
+- `packages/app/src/components/admin-console/UserStatusHistoryPanel.tsx`
+- `packages/app/src/components/admin-console/UserIdentityVerificationChip.tsx`
+- `packages/app/src/components/admin-console/UserApprovalStatusChip.tsx`
+- `packages/app/src/components/admin-console/UserAccountStatusChip.tsx`
+- `docs/USER_MANAGEMENT_DESIGN.md`
+
+### 변경 파일
+
+- `packages/app/src/components/admin-console/types.ts`
+- `packages/app/src/components/admin-console/mockAdminData.ts`
+- `packages/app/src/components/admin-console/AdminConsolePage.tsx`
+- `packages/app/src/components/admin-console/UserRegistrationPanel.tsx`
+- `packages/app/src/components/admin-console/UserManagementPanel.tsx`
+- `docs/REQUIREMENT_SCREEN_COVERAGE.md`
+- `docs/WBS.md`
+- `docs/ARCHITECTURE.md`
+- `docs/CHANGE_SUMMARY.md`
+- `docs/TODO.md`
+- `docs/TECH_DEBT.md`
+- `docs/FINAL_DELIVERABLES.md`
+- `docs/DEMO_SCRIPT.md`
+- `notes/DECISIONS.md`
+- `README.md`
+- `backstage-portal/README.md`
+
+### 구현 내용
+
+- `UserRegistrationDetail`을 통해 신청자 기본정보/본인확인/신청정보/보안확인/승인처리 표시
+- `UserIdentityVerificationChip`, `UserApprovalStatusChip`, `UserAccountStatusChip` 추가
+- `UserApprovalWorkflow`에서 상태에 따른 검토 시작/승인/반려/보완요청/재신청 버튼 제공
+- `ExternalUserManagementPanel`에서 외부/수행사 사용자 목록 및 등록/수정/연장/잠금 버튼 제공
+- `UserAccessServicePanel`에서 사용자 소속/부서/그룹/역할/유형/데이터등급/프로젝트접근/권한/서비스 설정 UI 제공
+- `UserStatusHistoryPanel`에서 사용자별 상태 변경 이력 표시
+- `AdminConsolePage` 탭에 `외부 사용자 관리` 추가 및 등록/이력 상태 관리
+- `docs/USER_MANAGEMENT_DESIGN.md` 작성
+
+### 검증 결과
+
+- Backstage `http://localhost:3000` 접속 가능
+- Keycloak OIDC 로그인 가능
+- Home 화면에 `국방지능화플랫폼` 표시
+- Admin Console 접근 가능
+- 사용자 등록 신청 상세/승인 workflow 상태 변경 정상
+- 외부 사용자 관리 탭 정상 표시
+- 사용자 관리 > 접속 가능 서비스 설정 UI 정상
+- 기존 메뉴(Integrated Search, Project Workspace, Export Approval, Credit Manager, K-RMF Evidence) 정상 접근
+- `yarn tsc --noEmit`에서 신규 코드 타입 오류 없음 (기존 `App.test.tsx` 오류 제외)
+
+### 발생 오류 및 조치
+
+- MUI v4 `findDOMNode is deprecated` warning 유지 (기능에 영향 없음)
+- `App.test.tsx` TypeScript 오류 유지 (기존 오류)
+
+### 미완료/보류 사항
+
+- 실제 Keycloak/DB 연동은 15~18단계 및 운영 확장 단계에서 진행
+
+### 다음 단계 작업
+
+- 15단계: 권한/역할/메뉴 관리 화면 상세화
+
 ## 13단계: 국방지능화플랫폼 타이틀 변경 및 관리자 기능 화면 1차 보강
 
 ### 작성일시

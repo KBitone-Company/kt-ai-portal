@@ -22,6 +22,7 @@
 | 11.1 | Keycloak OIDC 런타임 환경변수 안정화 | 완료 | `.env` 로딩 스크립트, admin01 OIDC 로그인 검증 |
 | 12 | 최종 산출물 및 제안장표용 화면 정리 | 완료 | 최종 산출물 문서, 데모 시나리오, 기술부채 문서, 화면 캡처 |
 | 13 | 국방지능화플랫폼 타이틀 변경 및 관리자 기능 화면 1차 보강 | 완료 | 포털 명칭 변경, Admin Console mock UI 추가, 요구사항 화면 대응 문서 |
+| 14 | 사용자 등록/승인 및 외부 사용자 관리 화면 상세화 | 완료 | 사용자 등록 상세, 승인 workflow, 외부 사용자 관리, 상태 이력, 사용자 관리 설계 문서 |
 
 ## 11단계: 메인 포털 대시보드 및 홈 화면 재구성
 
@@ -62,6 +63,18 @@
 - [x] Admin Console 요약 카드 및 8개 관리 패널 구현 (mock data)
 - [x] Portal Dashboard Quick Links에 Admin Console 추가
 - [x] `docs/REQUIREMENT_SCREEN_COVERAGE.md` 작성
+- [x] WBS/ARCHITECTURE/CHANGE_SUMMARY/TODO/DECISIONS/README 갱신
+
+## 14단계: 사용자 등록/승인 및 외부 사용자 관리 화면 상세화
+
+- [x] 사용자 등록 신청 상세 화면 구현
+- [x] 본인확인 상태 Chip 추가
+- [x] 승인/반려/보완요청/재신청 mock workflow 구현
+- [x] 외부 사용자 관리 패널 추가
+- [x] 사용자 소속/역할/접속 가능 서비스 설정 UI 구현
+- [x] 사용자 상태 변경 이력 패널 구현
+- [x] `docs/USER_MANAGEMENT_DESIGN.md` 작성
+- [x] Admin Console 탭에 외부 사용자 관리 추가
 - [x] WBS/ARCHITECTURE/CHANGE_SUMMARY/TODO/DECISIONS/README 갱신
 
 ## 1단계: Backstage 기본 포털 구축

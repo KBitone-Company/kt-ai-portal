@@ -5,7 +5,15 @@ export type RegistrationStatus =
   | '본인확인완료'
   | '검토중'
   | '승인'
-  | '반려';
+  | '반려'
+  | '보완요청';
+
+export type IdentityVerificationStatus =
+  | '미확인'
+  | '확인중'
+  | '확인완료'
+  | '확인실패'
+  | '재확인필요';
 
 export type AccountStatus = '활성' | '잠금' | '비활성' | '만료예정';
 
@@ -24,6 +32,33 @@ export type AuditResult = '성공' | '실패' | '차단';
 
 export type RiskLevel = '낮음' | '보통' | '높음' | '심각';
 
+export type StatusHistoryEvent =
+  | '사용자 등록 신청'
+  | '본인확인 완료'
+  | '검토 시작'
+  | '승인'
+  | '반려'
+  | '보완요청'
+  | '계정 생성'
+  | '계정 잠금'
+  | '계정 해제'
+  | '역할 변경'
+  | '접속 기간 변경'
+  | '접근 서비스 변경';
+
+export type DataAccessLevel = '공개' | '내부' | '비밀';
+
+export type AccessibleService =
+  | 'Portal Dashboard'
+  | 'Integrated Search'
+  | 'Project Workspace'
+  | 'Export Approval'
+  | 'Credit Manager'
+  | 'K-RMF Evidence'
+  | 'Admin Console'
+  | 'OpenMetadata'
+  | 'OpenSearch Dashboards';
+
 export interface AdminSummary {
   pendingRegistrations: number;
   pendingApprovals: number;
@@ -40,11 +75,29 @@ export interface UserRegistration {
   name: string;
   organization: string;
   email: string;
+  phone?: string;
   userType: AdminUserType;
   reason: string;
   identityVerified: boolean;
+  identityStatus: IdentityVerificationStatus;
   status: RegistrationStatus;
   appliedAt: string;
+  // 상세 확장 필드
+  department?: string;
+  position?: string;
+  identityMethod?: string;
+  identityVerifiedAt?: string;
+  identityResult?: string;
+  verifier?: string;
+  businessPurpose?: string;
+  requestedRole?: string;
+  requestedServices?: string[];
+  accessStartDate?: string;
+  accessEndDate?: string;
+  securityOathSubmitted?: boolean;
+  privacyAgreed?: boolean;
+  externalSecurityConfirmed?: boolean;
+  reviewComment?: string;
 }
 
 export interface AdminUser {
@@ -53,12 +106,47 @@ export interface AdminUser {
   accountId: string;
   email: string;
   organization: string;
+  department?: string;
   role: string;
+  userGroup?: string;
   userType: AdminUserType;
   accountStatus: AccountStatus;
   lastLoginAt: string;
-  accessibleServices: string[];
+  accessibleServices: AccessibleService[];
+  accessibleMenus?: string[];
+  dataAccessLevel?: DataAccessLevel;
+  projectAccess?: string;
+  canApproveExport?: boolean;
+  canManageCredit?: boolean;
+  canAuditKrmf?: boolean;
   locked: boolean;
+}
+
+export interface ExternalUser {
+  id: string;
+  name: string;
+  email: string;
+  organization: string;
+  company: string;
+  accountStatus: AccountStatus;
+  accessStart: string;
+  accessEnd: string;
+  role: string;
+  accessibleServices: AccessibleService[];
+  lastLoginAt?: string;
+  expiryWarning?: boolean;
+}
+
+export interface UserStatusHistory {
+  id: string;
+  timestamp: string;
+  actor: string;
+  userId: string;
+  event: StatusHistoryEvent;
+  previousStatus?: string;
+  newStatus?: string;
+  reason?: string;
+  ip?: string;
 }
 
 export interface AdminRole {
@@ -132,6 +220,8 @@ export interface AdminConsoleData {
   summary: AdminSummary;
   registrations: UserRegistration[];
   users: AdminUser[];
+  externalUsers: ExternalUser[];
+  statusHistories: UserStatusHistory[];
   roles: AdminRole[];
   loginPolicies: LoginPolicy[];
   passwordPolicies: PasswordPolicy[];

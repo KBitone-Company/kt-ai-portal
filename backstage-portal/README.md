@@ -78,7 +78,7 @@ Keycloak Client Secret 확인 방법:
 - Credit Manager
 - K-RMF Evidence
 - Integrated Search
-- Admin Console
+- Admin Console (사용자 등록/승인, 외부 사용자 관리, 권한/정책/감사로그/메뉴)
 
 ## 프로덕션 빌드
 

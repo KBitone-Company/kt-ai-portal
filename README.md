@@ -87,7 +87,7 @@ Keycloak OIDC 로그인 화면입니다. `admin01` 사용자를 통해 Backstage
 - **Export Approval**: 데이터 반출/반입 승인 관리 PoC
 - **Credit Manager**: 프로젝트별 크레딧 관리 PoC
 - **K-RMF Evidence**: K-RMF 보안통제 증빙관리 PoC
-- **Admin Console**: 사용자/권한/정책/감사로그/메뉴 관리자 허브 PoC
+- **Admin Console**: 사용자/권한/정책/감사로그/메뉴 관리자 허브 PoC (사용자 등록/승인/외부 사용자 관리 상세화)
 
 ## 폴더 구조
 

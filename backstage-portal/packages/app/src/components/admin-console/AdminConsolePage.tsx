@@ -7,13 +7,16 @@ import Typography from '@material-ui/core/Typography';
 import { AdminSummaryCards } from './AdminSummaryCards';
 import { UserRegistrationPanel } from './UserRegistrationPanel';
 import { UserManagementPanel } from './UserManagementPanel';
+import { ExternalUserManagementPanel } from './ExternalUserManagementPanel';
 import { RolePermissionPanel } from './RolePermissionPanel';
 import { LoginPolicyPanel } from './LoginPolicyPanel';
 import { PasswordPolicyPanel } from './PasswordPolicyPanel';
 import { AuditLogPanel } from './AuditLogPanel';
 import { MenuManagementPanel } from './MenuManagementPanel';
 import { AdminRequirementCoveragePanel } from './AdminRequirementCoveragePanel';
+import { UserStatusHistoryPanel } from './UserStatusHistoryPanel';
 import { mockAdminData } from './mockAdminData';
+import { UserRegistration, UserStatusHistory } from './types';
 
 interface TabPanelProps {
   children: React.ReactNode;
@@ -28,10 +31,13 @@ const TabPanel = ({ children, value, index }: TabPanelProps) => {
 
 export const AdminConsolePage = () => {
   const [tab, setTab] = useState(0);
+  const [registrations, setRegistrations] = useState<UserRegistration[]>(mockAdminData.registrations);
+  const [statusHistories, setStatusHistories] = useState<UserStatusHistory[]>(mockAdminData.statusHistories);
+
   const {
     summary,
-    registrations,
     users,
+    externalUsers,
     roles,
     loginPolicies,
     passwordPolicies,
@@ -63,6 +69,7 @@ export const AdminConsolePage = () => {
           >
             <Tab label="사용자 등록 신청" />
             <Tab label="사용자 관리" />
+            <Tab label="외부 사용자 관리" />
             <Tab label="권한 / 역할" />
             <Tab label="로그인 정책" />
             <Tab label="비밀번호 정책" />
@@ -73,27 +80,37 @@ export const AdminConsolePage = () => {
         </Paper>
 
         <TabPanel value={tab} index={0}>
-          <UserRegistrationPanel registrations={registrations} />
+          <UserRegistrationPanel
+            registrations={registrations}
+            onRegistrationsChange={setRegistrations}
+            onHistoriesChange={setStatusHistories}
+          />
+          <Box marginTop={3}>
+            <UserStatusHistoryPanel histories={statusHistories} title="전체 등록 신청 이력" />
+          </Box>
         </TabPanel>
         <TabPanel value={tab} index={1}>
-          <UserManagementPanel users={users} />
+          <UserManagementPanel users={users} histories={statusHistories} />
         </TabPanel>
         <TabPanel value={tab} index={2}>
-          <RolePermissionPanel roles={roles} />
+          <ExternalUserManagementPanel externalUsers={externalUsers} />
         </TabPanel>
         <TabPanel value={tab} index={3}>
-          <LoginPolicyPanel policies={loginPolicies} />
+          <RolePermissionPanel roles={roles} />
         </TabPanel>
         <TabPanel value={tab} index={4}>
-          <PasswordPolicyPanel policies={passwordPolicies} />
+          <LoginPolicyPanel policies={loginPolicies} />
         </TabPanel>
         <TabPanel value={tab} index={5}>
-          <AuditLogPanel logs={auditLogs} />
+          <PasswordPolicyPanel policies={passwordPolicies} />
         </TabPanel>
         <TabPanel value={tab} index={6}>
-          <MenuManagementPanel menuItems={menuItems} />
+          <AuditLogPanel logs={auditLogs} />
         </TabPanel>
         <TabPanel value={tab} index={7}>
+          <MenuManagementPanel menuItems={menuItems} />
+        </TabPanel>
+        <TabPanel value={tab} index={8}>
           <AdminRequirementCoveragePanel coverage={requirementCoverage} />
         </TabPanel>
       </Box>
